@@ -105,8 +105,8 @@ class Game():
          self.velocidade = velocidade
          self.x_controle = velocidade
          self.y_controle = y_controle
-         self.largura = 700
-         self.altura = 700
+         self.largura = 600
+         self.altura = 600
          self.pontos = 0
 
     @property  
@@ -162,7 +162,7 @@ def main():
 
     game = Game(8, 0)
     cobra = Cobra((game.largura/2), (game.altura/2) )
-    maca = Maca(randint(40, (game.largura-40)), randint(50, (game.altura-40)))
+    maca = Maca(randint(50, (game.largura-50)), randint(60, (game.altura-50)))
 
     fonte = pygame.font.SysFont('arial', 20, True, True)
 
@@ -186,8 +186,8 @@ def main():
         cobra.y_cobra = game.altura/2
         cobra.morto = False
         cobra.resetaCorpo()
-        maca.x_maca = randint(40, 760)
-        maca.y_maca = randint(50, 550)
+        maca.x_maca = randint(40, game.largura-50)
+        maca.y_maca = randint(50, game.altura-50)
     
 
     def teclas():
@@ -233,8 +233,8 @@ def main():
 
     def comeMaca():
         if cobraDesenho.colliderect(macaDesenho):
-            maca.x_maca = randint(40, 760)
-            maca.y_maca = randint(50, 550)
+            maca.x_maca = randint(50, game.largura-50)
+            maca.y_maca = randint(50, game.altura-50)
             game.pontos = game.pontos + 10
             barulho_colisao.play()
             cobra.atualizaTamanho(3)
@@ -307,7 +307,7 @@ def main():
         
         aumentaCobra(cobra.lista_corpo)
 
-        janela.blit(texto_formatado, (550, 40))
+        janela.blit(texto_formatado, (450, 40))
         pygame.display.update()
 
 if __name__ == '__main__':
