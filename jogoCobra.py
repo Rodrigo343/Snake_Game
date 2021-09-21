@@ -167,9 +167,9 @@ def main():
     fonte = pygame.font.SysFont('arial', 20, True, True)
 
     pygame.mixer.music.set_volume(0.05)
-    musica_fundo = pygame.mixer.music.load('BoxCat Games.mp3')
+    musica_fundo = pygame.mixer.music.load('sons/BoxCat Games.mp3')
     pygame.mixer.music.play(-1)
-    barulho_colisao = pygame.mixer.Sound('smw_coin.wav')
+    barulho_colisao = pygame.mixer.Sound('sons/smw_coin.wav')
     barulho_colisao.set_volume(0.20)
 
     janela = pygame.display.set_mode((game.largura,game.altura))
